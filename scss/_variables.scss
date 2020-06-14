@@ -1,0 +1,15 @@
+//VARIABLES
+//---------------------------
+
+$white: #fff;
+$violet: hsl(257, 40%, 49%);
+$accent: #fe79a6;
+
+//MIXINS
+//---------------------------
+
+@mixin mq {
+  @media only screen and (min-width: 1100px) {
+    @content;
+  }
+}

@@ -1,0 +1,184 @@
+//MAIN
+//---------------------------
+
+.main {
+  padding-top: 4rem;
+  display: flex;
+  min-height: 100vh;
+  background-color: $violet;
+  background-image: url(../images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  background-position: top;
+  color: $white;
+
+  @include mq {
+    background-image: url(../images/bg-desktop.svg);
+    background-size: cover;
+  }
+}
+
+.container {
+  width: min(85%, 1440px);
+  margin: auto;
+}
+
+.row {
+
+  max-width: 600px;
+  margin: 0 auto;
+
+  @include mq {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.col {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  &--30 {
+    flex: 1.5 !important;
+  }
+
+  @include mq {
+    flex: 1;
+    text-align: left;
+
+    &+& {
+      margin-left: 4%;
+    }
+  }
+}
+
+.landing {
+
+  &__logo {
+    height: 3.8rem;
+    display: block;
+
+    @include mq {
+      height: 5rem;
+    }
+  }
+
+  &__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2.6rem;
+
+    @include mq {
+      font-size: 3.4rem;
+    }
+  }
+
+  &__txt {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 2.6rem;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 60%;
+    max-width: 250px;
+    background-color: $white;
+    border-radius: 200px;
+    padding: 1rem 5rem;
+    font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 6rem;
+    transform: translateY(0);
+    box-shadow: 0 .5rem .5rem rgba(#000, 0.2);
+    transition: all .3s;
+
+    &:hover {
+      transform: translateY(-.5rem);
+      box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 .5rem .5rem rgba(#000, 0.2);
+    }
+
+    @include mq {
+      text-align: center;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    justify-content: center;
+
+    @include mq {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+
+  &__social-media-link {
+    padding: .8rem;
+    border-radius: 50%;
+    border: 1px solid $white;
+    display: flex;
+    transition: border .3s;
+
+    &:hover {
+      border: 1px solid $accent;
+    }
+  }
+
+  &__social-media-link:hover &__social-media-icon {
+    fill: $accent;
+  }
+
+  &__social-media-link:nth-child(even) {
+    margin: 0 1.6rem;
+  }
+
+  &__social-media-icon {
+    fill: $white;
+    width: 1.6rem;
+    height: 1.6rem;
+    transition: fill .3s;
+  }
+}
+
+
+//FOOTER
+//---------------------------
+
+.footer {
+  background-color: $violet;
+  padding-bottom: 3rem;
+
+  @include mq {
+    background-color: transparent;
+    padding-bottom: 0;
+    margin-top: -4rem;
+  }
+}
+
+.sr-only {
+  display: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: $white;
+}
+
+.attribution a {
+  color: inherit;
+  transition: color .3s;
+
+  &:hover {
+    color: $accent;
+  }
+}
